@@ -1,0 +1,27 @@
+body{
+  background-image:url(irish.jpg);
+  background-size: fill;
+}
+
+.chat{
+  margin:90% auto 5% auto;
+  width: 70%;
+  text-align: center;
+}
+
+#question{
+    border: 3px inset #146b21;
+    outline:0;
+    height:30px;
+    width: 50%;
+      font-size: 25px;
+      color:#146b21;
+  }
+button{
+    border: 3px inset #146b21;
+
+    outline:0;
+    height:50px;
+    width: 10%;
+  }
+</style>

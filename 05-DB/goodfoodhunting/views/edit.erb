@@ -1,0 +1,12 @@
+<h1><%= "#{@dish[0]['name']}"%></h1>
+<!-- <%="#{@dish[0]['id']}"%> -->
+<%= "<img class = 'prof_pic' src = '#{@dish[0]['img_url']}'>"%>
+<form action="/dishes/<%= "#{@dish[0]['id']}"%>" method="post">
+  <input type="hidden" name="_method" value = "put">
+  <label for="">name:</label>
+  <%="<input name='name' type='text' value='#{@dish[0]['name']}' >"%>
+  <label for="">Image Url:</label>
+  <%="<input name='img_url' type='text' value=#{@dish[0]['img_url']} >"%>
+  <div></div>
+  <button>Edit dish</button>
+</form>

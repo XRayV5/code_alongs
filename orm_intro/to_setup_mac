@@ -1,0 +1,14 @@
+
+
+
+
+
+bundle sublime
+
+install ruby
+gems:
+pry
+sinatra
+sinatra_generator
+pg
+activerecord

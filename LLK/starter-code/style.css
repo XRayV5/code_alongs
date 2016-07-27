@@ -1,0 +1,90 @@
+.board {
+  height: 50%;
+  width: 50%;
+  padding-top: 20px;
+  display:inline-block;
+
+}
+.card{
+  height: 200px;
+  width: 150px;
+  border: 2px solid black;
+  background: #fcff00;
+  border-radius: 10px;
+    margin:8%;
+  /*margin:40px 0px 0px 50px;*/
+  float:left;
+}
+
+img{
+  height: 190px;
+  width: 140px;
+}
+
+.name {
+  color: #ff0000;
+}
+
+body{
+    font-family: Open Sans, sans-serif;
+    text-align: center;
+}
+nav{
+  background:#808080 ;
+}
+
+#wrapper{
+
+}
+#br{/*this is to make up the break line underneath navbar*/
+  background: #C4C0C0;
+  margin:10px;
+  height:5px;
+}
+
+h1 {color: rgb(2, 132, 130);
+  font-weight: bold;
+  font-family: Arial, monospace;
+  font-weight: bold; <!--// 900-100, or bold, bolder, normal, light -->
+  font-size: 80px <!--//by pixel, by ems, or by percentage.-->
+  font-style: normal;
+  text-align: center;
+  text-decoration:none;
+
+  clear:both;/*This is to separat from the nav*/
+  /*the following is to add one grey break line beneath the nav*/
+
+
+  }
+h2 {color: #ffd700;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;}
+h4 {padding:  0 0 20px 0;
+    font-weight: light;
+    text-decoration: underline;
+    }
+a{
+  text-decoration: none;
+  background: #ffbf00;
+  color:white;
+    text-transform: uppercase;
+    padding:35px;
+    display: block;
+    float:left;
+}
+a:hover{
+  background: #ee5f3c
+}
+.clearfix:after {
+        visibility: hidden;
+        display: block;
+        content: " ";
+        clear: both;
+        height: 0;
+        font-size: 0;
+      }
+footer{
+  background: #808080;
+  clear:both;
+}

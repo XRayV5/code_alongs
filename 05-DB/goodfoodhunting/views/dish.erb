@@ -1,0 +1,7 @@
+<h1><%= "#{@dish[0]['name']}"%></h1>
+<%= "<img class = 'prof_pic' src = '#{@dish[0]['img_url']}'>"%>
+<%= "<a href = '/dishes/#{@dish[0]['id']}/edit'>Edit</a>"%>
+<form action="/dishes/<%="#{@dish[0]['id']}"%>" method="post">
+  <div><input type="hidden" name="_method" value="delete"></div>
+  <button class="dlt" >Remove Dish</button>
+</form>

@@ -1,0 +1,279 @@
+https://gist.github.com/HMAN1911/9cf99053071fccee95b680467c1871e7
+
+Guys, its really important that you at least cover the ruby 20 minutes
+and the codeacademy ruby track.
+Derek Banas’ video is also highly recommended.
+
+
+For jQuery, watch the derek banas jQuery video https://www.youtube.com/watch?v=BWXggB-T1jQ
+
+Ruby basics
+
+# -comment
+print "whatever"
+print and puts: oneline vs. new line
+puts var1 + "" + var2
+var1.to_s :  to string
+var2.to_i :  to int
+able to store large integers
+float 14 digits accuracy
+
+every thing in ruby is of object
+puts var.class
+A_CONSTANTS : get error if try to change value but ...still changes it
+
+File.new("file1.out","w")
+
+=begin
+multiline comment
+=end
+
+if ()
+  puts "sfa"
+elsif ()
+  puts ""
+else
+ puts ""
+end
+
+<=>
+unless
+
+while loop ruby
+ y=1
+while y <=10
+ y += 1
+  next unless (y % 2) ==0
+  puts y
+end
+
+// until loop
+a = 1
+ until a >= 10
+  a += 1
+  next unless (a % 2)
+  puts a
+end
+
+numbers = [1,2,3,4]
+
+for number in numbers
+ puts "#{number}, "
+end
+
+arr.each do |food|
+  puts "Gets some #{food}"
+end
+
+(0..5).each do |i|
+  puts "# #{i}"
+end
+
+//functions
+
+
+def add_nums(num1, num2)
+  return num1.to_i + num_2.to_i
+end
+
+puts add_nums(3,4)
+
+x=1
+
+
+// throw exception
+begin
+  answer = num1 / num2
+rescue
+  puts "YOU cant divide by 0"
+
+
+age = 12
+def checkAge(age)
+   raise aguErr, "enter positive numer" unless age <=0
+
+end
+
+
+begin
+  checkAge(-1)
+rescue aguErr
+  puts "that is an impossible age"
+
+//double quotes and single qoutes
+puts "Add them #{1+2} "
+
+// single quote are barely used
+
+multiline string = <<EOM
+string lines...
+EOM>>
+
+// counts() .include()
+
+puts "Vowels:" + fullname.count("aeiou")//("^aeiou")
+
+
+
+class Dog
+  attr_accessor :name, :height, :weight
+
+  def bark
+    return "Generic Bark"
+  end
+end
+
+rover = Dog.new
+
+rover.name = "Rover"
+
+class GermanShepard < Dog
+  def bark
+    return "loud Bark"
+  end
+end
+
+max = GermanShepard.new
+max.name = "Max"
+
+
+printf %d for int, %f for floats
+
+modules : can not be turned into objects
+
+module Human
+  attr_accessor ：name, :height, :weight
+
+  def run
+    puts self.name + " runs"
+  end
+end
+
+
+another file:
+module Smart
+
+  def act_smart
+    return "e = mc2"
+  end
+end
+
+
+require_relative "human"
+require_relative "smart"
+
+module Animal
+  def make_sound
+    puts "Grrrr"
+  end
+end
+
+
+
+class Dog
+
+  include Animal
+end
+
+rover = Dog.new
+
+rover.make_sound
+
+class Scientist
+  include Human
+  prepend Smart// will use this rather than the below one
+
+  def act_smart
+    return "E=mc^2"
+  end
+end
+
+
+einstein.name = "Albert"
+einstein.run
+
+//Polym overloading
+class Bird
+ def tweet(bird_type)
+  bird_type.tweet
+ end
+end
+
+class Cardinal < Bird
+  def tweet
+    puts "tweet tweet"
+  emd
+end
+
+
+classs Parrot < Bird
+  def tweet
+    puts "Squawk"
+  end
+end
+
+
+:derek
+
+
+puts :derek
+puts :derek
+puts :derek
+puts :derek
+puts :derek
+
+array_1 = Array.new(5,"Empty");
+
+array_1.unshift(0);
+array_4.shift();
+
+.push .pop
+
+.concat
+
+p array_4
+
+array_4.each do |value|
+  put value
+end
+
+
+HASH
+number_hash = {"PI" => 3.14,
+"Golden" => 1.68}
+
+puts number_hash["PI"]
+
+hashinstance["key name"] = "value"
+
+class Menu
+  include Enumerable
+
+  def each
+    yield "pizza"
+    yield "salad"
+    yield "water"
+  end
+end
+
+menu_options = Menu.new
+mennu_options.each do |item|
+  puts "xxxxx"
+end
+
+p menu_options.find{}
+
+
+
+file object
+
+
+file = File.new("authors.out",w)
+
+file.puts "What the hell?"
+
+file.close
+
+puts.File.read("authors.out")
+
+file = File.new()

@@ -1,0 +1,20 @@
+<h1>My Pokemon Collection</h1>
+<table class="responstable">
+
+  <tr>
+    <th>Species</th>
+    <th>Nickname</th>
+    <th>Type</th>
+    <th>Levels</th>
+  </tr>
+
+  <%@pokes.each do |poke|%>
+    <%= "<tr>
+          <td>#{poke['species']}</td>
+          <td>#{poke['nickname']}</td>
+          <td>#{poke['type']}</td>
+          <td>#{poke['levels']}</td>
+        </tr>"%>
+  <%end%>
+</table>
+<div><a href="/new">Add Dishes</a></div>

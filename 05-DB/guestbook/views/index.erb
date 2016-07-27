@@ -1,0 +1,14 @@
+<h1>Guest Book</h1>
+
+<form action="/show">
+  <label for="">name</label>
+  <input type="text" name = 'name'>
+  <button>submit</button>
+</form>
+
+
+
+<% @guests.each do |guest|%>
+<p><%= guest['name'] %></p>
+<% end %>
+<a href="/new">Add new guest</a>

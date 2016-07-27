@@ -1,0 +1,9 @@
+<h1><%=@msg%></h1>
+<p>
+<% @guests.each do |guest|%>
+<p>
+  <%=@name%>
+</p>
+<p><%= guest['name'] %></p>
+<% end %>
+</p>

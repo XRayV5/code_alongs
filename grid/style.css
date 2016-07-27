@@ -1,0 +1,96 @@
+/*http://www.imageneslindas.info/wp-content/uploads/garfield1.jpg*/
+body{
+  width:80%;
+  margin: 0 auto;
+}
+.span-1,.span-2,.span-3{
+  min-height: 100px;
+  float: left;
+  margin-right: 3.333333%;//20px;
+  margin-bottom: 2%;
+}
+.span-1{
+  background-color: mistyrose;
+  width:30%;/*180px;180/600*/
+}
+.span-2{
+  background-color: linen;
+  width:63.3333333333% ;/*380px;380/600*/
+}
+.span-3{
+  background-color: tomato;
+  width:96.66666666% ;//580px;
+}
+img{
+  margin: auto;
+  max-width: 100%;
+}
+
+h1 {
+  padding-left: 30px;
+}
+nav{
+  box-sizing: border-box;
+  width:100%;
+  margin:3% auto;
+}
+
+nav ul{
+  width:100%;
+  margin:auto;
+  padding:0.4em 0;
+
+}
+
+nav li{
+  background-color: orange;
+  font-size: 1.2em;
+  float:left;
+  text-align: center;
+  list-style: none;
+  padding:0.4em 0;
+  margin: auto;
+  width: 24%;
+  margin: 0.5% 0.5%;
+}
+
+
+
+
+
+/*@media (max-width:40em){
+  body{
+    background-color:plum
+  }
+  .span-1, .span-2{
+    width: 96.6666666%;
+  }
+}*/
+@media (min-width:40em){
+  .span-3,.span-1, .span-2{
+    margin-right:3.333333333%;
+  }
+  .span-3{
+    width:96.666666666%;
+  }
+  .span-1{
+    width:30%;
+  }
+  .span-2{
+    width: 63.333333%;
+  }
+}
+
+@media (min-width:80em){
+  body{
+    background-color:plum;
+    width:80%;
+  }
+}
+
+
+@media (min-width:600px){
+  body{
+    background-color:orange;
+  }
+}

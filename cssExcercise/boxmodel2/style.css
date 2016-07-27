@@ -1,0 +1,30 @@
+.box{
+  box-sizing: border-box;
+  background-color: pink;
+  border-style: solid;
+  border-color: black;
+  border-width:10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.box2{
+  background-color: linen;
+  height: 100px;
+}
+
+img{
+  float:right;
+
+}
+.col-left{
+  height: 100px;
+  background:tomato;
+  display: inline-block;
+  width: 39%;
+}
+.col-right{
+  height:100px;
+  background: plum;
+  display: inline-block;
+  width:60%;
+}
