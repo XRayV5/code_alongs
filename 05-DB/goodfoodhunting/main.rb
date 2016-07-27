@@ -2,19 +2,11 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
-
-def run_sql(sql_str)
-  db = PG.connect(dbname: 'goodfoodhunting')
-  db_pool = db.exec(sql_str)
-  db.close
-  db_pool
-end
-
-
+require_relative 'db_config'
+require_relative 'models/dish'
 
 get '/' do
-  sql = 'select * from dishes;'
-  @dishes = run_sql(sql)
+  @dishes = Dish.all
   erb :index
 end
 
@@ -24,29 +16,39 @@ get '/dishes/new' do
 end
 
 post '/dishes' do
-  run_sql("insert into dishes(name, img_url) values ('#{params[:name]}', '#{params[:img_url]}');")
+  dish_new = Dish.new()
+  dish_new.name = params[:name]
+  dish_new.img_url = params[:img_url]
+  #run_sql("insert into dishes(name, img_url) values ('#{params[:name]}', '#{params[:img_url]}');")
   #@dishes = db.exec('select * from dishes;')
+  dish_new.save
   redirect to '/'
 end
 
 get '/dishes/:id' do
-  @dish = run_sql("select * from dishes where id = '#{params[:id]}';")
+  @dish = Dish.find(params[:id])
+  #@dish = run_sql("select * from dishes where id = '#{params[:id]}';")
   erb :dish
 end
 
 get '/dishes/:id/edit' do
-  @dish = run_sql("select * from dishes where id = '#{params[:id]}';")
+  @dish = Dish.find(params[:id])
+  #@dish = run_sql("select * from dishes where id = '#{params[:id]}';")
   erb :edit
 end
 
 put '/dishes/:id' do
-  sql = "update dishes set name = '#{params[:name]}', img_url = '#{params[:img_url]}' where id = '#{params[:id]}';"
-  run_sql(sql)
+  dish = Dish.find(params[:id])
+  dish.name = params[:name]
+  dish.img_url = params[:img_url]
+  dish.save
   redirect to '/'
 end
 
 delete '/dishes/:id' do
-  sql = "delete from dishes where id = '#{params[:id]}';"
-  run_sql(sql)
+  dish = Dish.find(params[:id])
+  dish.destroy
+  # sql = "delete from dishes where id = '#{params[:id]}';"
+  # run_sql(sql)
   redirect to '/'
 end

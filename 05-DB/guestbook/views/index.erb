@@ -9,6 +9,10 @@
 
 
 <% @guests.each do |guest|%>
-<p><%= guest['name'] %></p>
+<p><%= guest.name %></p>
+  <form action="/<%=guest.id%>" method='post'>
+    <input type="hidden" name="_method" value="delete">
+    <button >Delete</button>
+  </form>
 <% end %>
 <a href="/new">Add new guest</a>

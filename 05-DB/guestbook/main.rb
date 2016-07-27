@@ -24,6 +24,20 @@ get '/new' do
 end
 
 
+
+delete '/:id' do
+  # db = PG.connect(dbname: 'guestbook')
+  # @guests = db.exec('select * from guests;')
+  # db.close
+  #gst = Guest.new()
+  gst = Guest.find(params[:id])
+  gst.destroy
+  redirect to '/'
+  #db.close
+end
+
+
+
 post '/addnew' do
   # db = PG.connect(dbname: 'guestbook')
   # @guests = db.exec('select * from guests;')
