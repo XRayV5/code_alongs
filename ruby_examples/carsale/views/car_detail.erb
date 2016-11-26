@@ -1,0 +1,54 @@
+<h2><%="#{@theCar['manufacturer']} #{@theCar['model']} #{@theCar['make']}"%></h2>
+<div class="car_img"><img src="<%=@theCar['img_url']%>" alt="image not available"></div>
+
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<div class="spec_ap">
+  <table>
+  <tr>
+    <th>Reg.</th>
+    <td><%=@theCar[:reg]%></td>
+  </tr>
+  <tr>
+    <th>Type</th>
+    <td><%=@theCar[:car_type]%></td>
+  </tr>
+  <tr>
+    <th>Manufacturer</th>
+    <td><%=@theCar[:manufacturer]%></td>
+  </tr>
+  <tr>
+    <th>Model</th>
+    <td><%=@theCar[:model]%></td>
+  </tr>
+  <tr>
+    <th>Year of Make</th>
+    <td><%=@theCar[:make]%></td>
+  </tr>
+  <tr>
+    <th>Price</th>
+    <td><%=@theCar[:price]%></td>
+  </tr>
+  <tr>
+    <th>Listed by</th>
+    <td><%=@theUser[:email]%></td>
+  </tr>
+</table>
+</div>

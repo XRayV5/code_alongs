@@ -1,0 +1,15 @@
+MongoDB learnning note:
+
+the whole mongoDB is a document(JSON) collection
+each entity(tables in RDB) is a document
+
+the concept of namespace
+
+in mongoDB all documents are encoded as BSON: binary JSON
+
+mongoose as a helper
+
+define the schema in a JSON fashion - hierachiecal = nested json
+
+models power the DB operations 
+

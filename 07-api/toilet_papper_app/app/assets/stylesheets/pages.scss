@@ -1,0 +1,13 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.flex-container{
+  background-color: mistyrose;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.flex-item{
+  background-color: linen;
+}

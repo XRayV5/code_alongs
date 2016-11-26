@@ -1,0 +1,24 @@
+$primary-color: pink;
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+body{
+  background: $primary-color;
+}
+
+.cakepudding {
+
+  border: 5px solid;
+  border-color: linen;
+  // border-radius: 50%;
+  @include border-radius(20px);
+  h2 {
+    color: lighten(blue, 20%);
+  }
+}

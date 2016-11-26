@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Good Food Hunting</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+  <%if logged_in?%>
+    <p>Hellow! <%= "#{current_user.email}"%></p>
+    <form action="/session" method ="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form>
+    <a href="/show_my_dish">My dishes</a>
+  <%else%>
+    <a href="/signup">Sign Up</a>
+  <%end%>
+  <!-- page content -->
+  <%= yield %>
+</body>

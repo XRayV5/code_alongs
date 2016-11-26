@@ -1,0 +1,20 @@
+
+<!-- <form action="/session/new" method="post">
+
+  <%=hidden_field_tag :authenticity_token, form_authenticity_token%>
+  <label for="">Email:</label>
+  <input type="text" name="email">
+  <label for="">Password</label>
+  <input type="text" name="pw">
+  <button>Login</button>
+
+</form> -->
+
+
+<%= form_tag '/session/new', method: 'post' do %>
+  <label for="">Email:</label>
+  <input type="text" name="email">
+  <label for="">Password</label>
+  <input type="password" name="pw">
+  <button>Login</button>
+<%end%>

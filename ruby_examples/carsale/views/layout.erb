@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get new wheels!</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+
+
+  <%if loggedIn?%>
+      <p>Welcome! <%="#{current_user.email}"%>
+      <form action='/logoff' method="post">
+      <input type='hidden' name='_method' value='delete'/>
+      <button>Log out</button></form></p>
+  <%else%>
+  <div class="login">
+      <form action="/login" method="post">
+        <label>Username: </label>
+        <input type="text" name="username">
+        <label for="">Password: </label>
+        <input type="password" name="pw">
+        <button>Login</button>
+      </form>
+      <a href="/signup">Sign up</a>
+    </div>
+  <%end%>
+
+  <%= yield %>
+<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type='text/javascript' src="/javascripts/application.js"></script>
+</body>

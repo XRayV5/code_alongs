@@ -1,0 +1,146 @@
+rails new toilet_paper_app
+rails generate controller pages about
+
+----Start----
+Steps to generate a new rails app
+rails new goodfoodhunting -d=postgresql -T
+rails db:create
+rails g resource dish name:string image_url:text
+rails db:migrate
+
+  - TO add a new resource(table)
+rails g resource like dish:references
+rails db:migrate
+   -- a typical user table
+rails g resource user email:string password_digest:text
+rails db:migrate
+
+  - Add a column to a table/an attr to model
+rails g migration add_user_id_to_dishes user_id:integer
+   -- To enforce foreign key
+rails g migration add_user_id_to_dishes user:references
+----end----
+
+
+
+rails g resources user email:string password_digest:text
+
+rails generate resource lead email:string;
+
+running via Spring preloader in process 53555
+      invoke  active_record
+      create    db/migrate/20160809014045_create_leads.rb  - Database tracking file
+      create    app/models/lead.rb  - Create the model
+      invoke  controller
+      create    app/controllers/leads_controller.rb - Create Controller
+
+      invoke    erb
+      create      app/views/leads - Create views
+      invoke    helper
+      create      app/helpers/leads_helper.rb
+      invoke    assets
+      invoke      coffee
+      create        app/assets/javascripts/leads.coffee
+      invoke      scss
+      create        app/assets/stylesheets/leads.scss
+
+      invoke  resource_route
+       route    resources :leads
+
+Go to gemfile to add new gems (under development gems)
+and restart the server, then do bundle install
+
+rails g resource users email:string  password_digest:text
+db:migrate
+
+
+
+
+
+------Dealing with CORS-------
+gem install rack-cors
+
+In Gemfile:
+gem 'rack-cors'
+
+
+In config/application.rb:
+config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins '*'
+    resource '*', :headers => :any, :methods => [:get, :post, :options]
+  end
+end
+
+
+In controller/application_controller.rb
+
+#To fix CORS for AJAX request
+skip_before_filter :verify_authenticity_token
+
+In
+
+
+
+----------Set up git upstream -----------
+To pull the lastest version to local
+
+git remote add upstream url_gitlord
+git pull upstream master
+
+
+
+------------Node project start--------------
+//node backend frame work
+npm install express --save (-dev //if only needed for dev mode)
+
+//page reloader
+npm install nodemon -g --save-dev
+
+// allow you embed js code chunks on pages
+npm i ejs --save
+// node js debugger tool
+npm i -g node-inspector
+
+------------kill process----------------------
+ps ax | greb 'filter by application name'
+//give you all relevant process
+
+
+kill -9 process_code
+
+------------Coding challenge---------------
+
+include readme
+	- how to set up
+	- package included, step through
+
+	- installation instruct
+	- usage instruct
+	...
+it's not about make it work! it's about the approache, the idea.
+
+Write Test!!!!!
+
+You need to be able to write test!
+
+Include Error handling
+
+
+input:
+  code: AU
+  currency_code: USD
+  regular_shipping_rate: 20
+  express_shipping_rate: 30
+
+  country_code: AU
+  currency_code: AUD
+  regular_shipping_rate: 10
+  express_shipping_rate: 20
+
+  rails g resource shipping_rate to_country_code:text, country_id:integer, country:references
+
+  rails g migration add_regular_shipping_rate_to_shipping_rates regular_shipping_rate:integer
+  rails g migration add_express_shipping_rate_to_shipping_rates express_shipping_rate:integer
+
+  rails g migration add_currency_code_to_shipping_rates currency_code:text

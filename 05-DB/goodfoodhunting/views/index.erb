@@ -1,7 +1,0 @@
-<h1>Good Food Hunting</h1>
-<% @dishes.each do |dish|%>
-<%= "<h2>#{dish['name']}</h2>"%>
-<%= "<img src=#{dish['img_url']}>"%>
-<%= "<a href = '/dishes/#{dish['id']}'>Show detail</a>"%>
-<%end%>
-<div><a href="/dishes/new">Add Dishes</a></div>

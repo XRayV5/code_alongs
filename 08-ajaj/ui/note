@@ -1,0 +1,29 @@
+UI desing
+
+1. start with mockup
+2. better start with normalized CSS??
+
+
+
+
+
+
+note:
+header tag can be anywhere, not necessarily to be at the top
+
+css:line-height: room or cushion between the lines
+
+css: inline-block element: by default they have padding the bottom, use vertical-align
+  to fix it
+css: vertical-align only effects inline-block elements
+
+.right {
+  float: right; //to put things side by side, this trick always works!
+}
+
+wingdings ideal for small icons: qoute unicode
+
+css selector: parent > children : this means selecting all direct children
+
+Q:
+img tags are inline-block by default???

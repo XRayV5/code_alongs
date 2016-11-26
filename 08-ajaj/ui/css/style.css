@@ -1,0 +1,67 @@
+.listing {
+  display: flex;
+  
+}
+
+
+
+/*Nice to have as default*/
+button:hover,
+a:hover {
+  color: red;
+}
+
+.header_icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.right {
+  float: right; //to put things side by side, this trick always works!
+}
+.ui-card {
+  width: 100%;
+}
+
+.content {
+  padding: .7em;
+}
+
+
+.card-header{
+  line-height: 2em; //room or cushion between the lines
+
+}
+
+
+.star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: yellow;
+  font-size: 3em;
+  opacity: 0;
+  transition: .5s;
+}
+.image_div {
+  position: relative;
+}
+
+.image_div img {
+  width: 100%;
+}
+
+.image_div:hover > .star {
+  display: block;
+  color: red;
+  opacity: 1;
+}
+
+@media (min-width: 35em) {
+  .ui-card {
+    width: 25%;
+  }
+
+}

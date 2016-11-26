@@ -1,0 +1,21 @@
+
+
+//To build a frontend server
+npm i gulp --save -dev  // install in local project dir
+npm i gulp -g // install gloablly
+
+//Install bundler to allow frontend require()
+npm i -g browserify
+
+//compile your original js code
+browserify app.js -o bundle.js
+
+//change script src to bundle.js
+
+//try to import a library: npm i lodash --save
+
+//require it in app.js:
+var _ = require('lodash');
+
+//run "browserify app.js -o bundle.js"
+to bundle again

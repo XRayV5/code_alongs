@@ -1,0 +1,27 @@
+<h1>About Me</h1>
+<style>
+  .flex-container{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+  }
+  .flex-item{
+    background-color: pink;
+    height: 100px;
+    /*width: 33.333%*/
+    flex: 1;
+  }
+  .flex-big-item{
+    background-color: yellow;
+    height: 100px;
+    flex: 2;
+  }
+</style>
+<!-- <p>Find me in app/views/pages/about.html.erb</p> -->
+<div class="flex-container">
+  <div class="flex-item">a</div>
+  <div class="flex-item">b</div>
+  <div class="flex-big-item">c</div>
+  <!-- <div class="flex-item"></div>
+  <div class="flex-item"></div> -->
+</div>

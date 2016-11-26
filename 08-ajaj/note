@@ -1,0 +1,18 @@
+To start scss live reloader:
+  navigate to the css style folder
+  sass .scss .css
+  sass --watch style.scss
+
+To start DT's hipstarter platform:
+
+  1. clone into your own folder
+  git clone https://github.com/epoch/hipstarter.git new_foldername
+    template command: $ git clone url new_folder_name
+
+  2. cd into new folder and install dependencies
+
+  3. $ npm install
+  4.  start developing
+      $ npm start
+  5. run page in browser
+  navigate to localhost:3000 or change port in gulpfile

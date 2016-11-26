@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Weapons Free!</title>
+</head>
+<body>
+<div class="form_tag">
+    <label for="">Name</label>
+    <input type="text" name="name" id="name">
+    <label for="">image</label>
+    <input type="text" name="image_url" id="image_url">
+    <button class="add">Add</button>
+</div>
+<div class="pager"></div>
+<div class="wrapper">
+  <!-- AJAX response goes in here -->
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="app.js"></script>
+<!-- <script>
+function hexToRgb(hex) {
+  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+      return r + r + g + g + b + b;
+  });
+
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+  } : null;
+}
+
+console.log(hexToRgb("#0033ff").r +" "+ hexToRgb("#0033ff").g +" " + hexToRgb("#0033ff").b ); // "51";
+console.log( hexToRgb("#03f").g );
+</script> -->
+</body>
+</html>

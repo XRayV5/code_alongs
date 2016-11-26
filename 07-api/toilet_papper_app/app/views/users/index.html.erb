@@ -1,0 +1,9 @@
+<!-- <a href="/leads/new">Add a lead</a> -->
+<%@users.each do |user|%>
+    <p><a href="/users/<%= user.id %>"><%=user['email']%></a></p>
+    <form action="/users/<%=user.id%>" method='post'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="hidden" name="_method" value="delete">
+      <button>Delete</button>
+    </form>
+<%end%>

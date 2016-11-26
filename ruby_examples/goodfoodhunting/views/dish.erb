@@ -1,0 +1,18 @@
+<h1><%= "#{@dish['name']}"%></h1>
+<%= "<img class = 'prof_pic' src = '#{@dish['img_url']}'>"%>
+<%= "<a href = '/dishes/#{@dish['id']}/edit'>Edit</a>"%>
+<form action="/dishes/<%="#{@dish['id']}"%>" method="post">
+  <div><input type="hidden" name="_method" value="delete"></div>
+  <button class="dlt" >Remove Dish</button>
+</form>
+<%= "<h3>Comments on #{@dish['name']}</h3>"%>
+<% @comments.each do |cmt|%>
+<%="<p>#{cmt['comment']}</p>"%>
+<%end%>
+<%if logged_in?%>
+  <form action="/comment" method="post">
+    <input type='hidden' name='dish_id' value=<%= @dish['id'] %>">
+    <textarea rows="4" cols="50" name="comment" placeholder="Comment here.."></textarea>
+    <button>Submit</button>
+  </form>
+<%end%>

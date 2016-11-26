@@ -1,0 +1,146 @@
+
+
+<!-- container  -->
+<%@dishes.each do |dish|%>
+
+<!-- wrapper, div with class like 'card' -->
+<div class="dish_card" data-id="<%= dish.id %>">
+
+  <h2><%= dish.name %></h2>
+
+  <p><img src="<%= dish.image_url %>" alt=""></p>
+
+  <p><span class="likes_count"><%= dish.likes.count %>!</span></p>
+
+  <p><form action="/likes" id="like_form" method="post">
+      <%=hidden_field_tag :authenticity_token ,form_authenticity_token %>
+      <input type="hidden" name="dish_id" value="<%= dish.id %>">
+      <button>Like</button>
+  </form></p>
+
+  <p><%dish.comments.each do |cmt|%>
+        <p><%= cmt.comment %><p>
+     <%end%>
+  </p>
+  <p><button class="ajaj_like">Like Ajaj</button></p>
+  <p><a href="/dishes/<%= dish.id %>">Edit</a></p>
+</div>
+<%end%>
+<style>
+  img{
+    /*height:200px;*/
+    max-width: 300px;
+  }
+</style>
+
+
+<script>
+
+  // $('.ajaj_like').on('click', function(event){
+  //   // $(event.target).parent().('span').text();
+  //   // console.log($(event.target).closest('.dish_card').find('.likes_count').text('!'));
+  // console.log($(event.target).closest('.dish_card').data('id'));
+  //   $.ajax( {
+  //     type: "POST",
+  //     url: "api/likes",
+  //     data: $(event.target).closest('.dish_card').data('id'),
+  //     success: function( response ) {
+  //       //Code to process the response
+  //       console.log(response);
+  //       $(event.target).closest('.dish_card').find('.likes_count').text(response);
+  //     }
+  //   });
+  //
+  // });
+
+
+  $('.ajaj_like').on('click', function(event){
+    // $(event.target).parent().('span').text();
+    // console.log($(event.target).closest('.dish_card').find('.likes_count').text('!'));
+    // console.log($(event.target).closest('.dish_card').data('id'));
+    var $dish_div = $(event.target).closest('.dish_card');
+    var dishID = $dish_div.data('id');
+    var $likeCountSpan = $dish_div.find('.likes_count');
+
+    $.ajax({
+      type: "POST",
+      url: "api/likes", //+ <%= %>,
+      data: {dish_id : dishID}
+    }).done(
+      function(data){
+        console.log(data.like_count);
+        console.log($likeCountSpan.html());
+        $likeCountSpan.html(data.like_count);
+        // $(event.target).closest('.dish_card').find('.likes_count').html(data.like_count);
+      });
+
+
+    });
+  //
+  // $('.ajaj_like').on('click', function(event){
+  //   // $(event.target).parent().('span').text();
+  //   // console.log($(event.target).closest('.dish_card').find('.likes_count').text('!'));
+  //   // console.log($(event.target).closest('.dish_card').data('id'));
+  //   var $dish_div = $(event.target).closest('.dish_card');
+  //   var dishID = $dish_div.data('id');
+  //   var $likeCountSpan = $dish_div.find('.likes_count');
+  //
+  //   $.ajax({
+  //     type: "GET",
+  //     url: "api/dishes", //+ <%= %>,
+  //     // data: {dish_id : dishID}
+  //   }).done(
+  //     function(data){
+  //       console.log(data.test_k);
+  //       // console.log($likeCountSpan.html());
+  //       // $likeCountSpan.html(data.like_count);
+  //       // $(event.target).closest('.dish_card').find('.likes_count').html(data.like_count);
+  //     });
+  //
+  //
+  //   });
+
+
+    // $('.ajaj_like').on('click', function(event){
+    //   // $(event.target).parent().('span').text();
+    //   // console.log($(event.target).closest('.dish_card').find('.likes_count').text('!'));
+    //   // console.log($(event.target).closest('.dish_card').data('id'));
+    //   var $dish_div = $(event.target).closest('.dish_card');
+    //   var dishID = $dish_div.data('id');
+    //   var $likeCountSpan = $dish_div.find('.likes_count');
+    //
+    //   $.ajax({
+    //     type: "GET",
+    //     url: "http://10.22.3.211:3000/api/dishes?t=1", //+ <%= %>,
+    //     // data: {dish_id : dishID}
+    //   }).done(
+    //     function(data){
+    //       console.log(data);
+    //       // console.log($likeCountSpan.html());
+    //       // $likeCountSpan.html(data.like_count);
+    //       // $(event.target).closest('.dish_card').find('.likes_count').html(data.like_count);
+    //     });
+    //
+    //
+    //   });
+
+
+
+//http://10.22.3.211:3000/api/dishes?image_url=earth
+  // $("button").click( function() {
+  //    $.ajax( {
+  //      type: "POST",
+  //      url: 'http://www.omdbapi.com/?t='+$('#ipt').val(),
+  //      data: $("form").serialize(),
+  //      success: function( response ) {
+  //        //Code to process the response
+  //        console.log(response);
+  //        $("#show").html(JSON.stringify(response));
+  //      }
+  //    });
+  //    return false;
+  //  } );
+
+
+
+</script>

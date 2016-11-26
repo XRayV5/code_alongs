@@ -1,0 +1,9 @@
+<h1>Add your dish</h1>
+<%= @new_dish.errors.full_messages.join() %>
+<form action="/dishes" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="">Dish name:</label>
+  <input type="text" name="d_name">
+  <input type="text" name="d_url">
+  <button>Add</button>
+</form>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Goodfoodhunting</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= current_user.email %>
+    <%if logged_in?%>
+      <%= form_tag '/session', method: 'delete' do %>
+        <button>Logout</button>
+      <%end%>
+    <%else%>
+      <%= form_tag '/session/new', method: 'post' do %>
+        <label for="">Email:</label>
+        <input type="text" name="email">
+        <label for="">Password</label>
+        <input type="password" name="pw">
+        <button>Login</button>
+      <%end%>
+    <%end%>
+    <%= yield %>
+  </body>
+</html>

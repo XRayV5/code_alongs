@@ -1,0 +1,10 @@
+<a href="/leads/new">Add a lead</a>
+<%@leads.each do |lead|%>
+    <p><a href="/leads/<%=lead['id']%>"><%=lead['email']%></a>
+      <form action="/leads/<%= lead['id'] %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="hidden" name="_method" value="delete">
+        <button>Delete</button>
+      </form>
+    </p>
+<%end%>
